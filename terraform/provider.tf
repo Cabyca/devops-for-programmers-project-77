@@ -155,21 +155,47 @@ resource "yandex_alb_load_balancer" "test-balancer" {
     }
   }
   
+  # добавить сюда 443
+
+  # listener {
+  #   name = "my-listener"
+  #   endpoint {
+  #     address {
+  #       external_ipv4_address {
+  #       }
+  #     }
+  #     ports = [ 80 ]
+  #   }    
+  #   http {
+  #     handler {
+  #       http_router_id = yandex_alb_http_router.tf-router.id
+  #     }
+  #   }
+  # }
+
+  #resource "yandex_alb_http_router" "tf-router" {
+  #name      = "my-http-router"
+  #}
+
   listener {
-    name = "my-listener"
+    name = "listener"
     endpoint {
       address {
         external_ipv4_address {
         }
       }
-      ports = [ 80 ]
-    }    
-    http {
-      handler {
-        http_router_id = yandex_alb_http_router.tf-router.id
+      ports = [443]
+    }
+    tls {
+      default_handler {
+        certificate_ids = ["fpq1j2b0a17o9l6vpq1o"]
+        http_handler {
+          http_router_id = yandex_alb_http_router.tf-router.id
+        }
       }
     }
   }
+
   
 }
 
