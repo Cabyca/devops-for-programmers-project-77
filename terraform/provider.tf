@@ -346,9 +346,9 @@ resource "local_file" "inventory" {
                                 })
 }
 
-# nodes:
-#   hosts:
-# %{ for i,vps in instances ~}
-#     ${vps.name}:
-#       ansible_host: ${vps_ipaddresses[i]}
-# %{ endfor ~}
+resource "ansible_vault" "secrets" {
+  #Путь к зашифрованному файлу хранилища.
+  vault_file          = "../ansible/group_vars/webservers/vault.yml"
+  #Путь к файлу паролей хранилища
+  vault_password_file = "../ansible/vault-password"
+}
