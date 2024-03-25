@@ -1,2 +1,2 @@
 .env
-../ansible/vault-password
+ansible/vault-password
