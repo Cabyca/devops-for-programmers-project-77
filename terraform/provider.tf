@@ -273,12 +273,12 @@ resource "yandex_compute_instance" "vm1" {
     ssh-keys = "ubuntu:${file("~/.ssh/id_ed25519.pub")}"
   }
 
-  connection {
-    type        = "ssh"
-    user        = "ubuntu"
-    private_key = file("~/.ssh/id_ed25519")
-    host        = self.network_interface[0].nat_ip_address
-  }
+  # connection {
+  #   type        = "ssh"
+  #   user        = "ubuntu"
+  #   private_key = file("~/.ssh/id_ed25519")
+  #   host        = self.network_interface[0].nat_ip_address
+  # }
   
   depends_on = [yandex_mdb_postgresql_cluster.dbcluster]
 }
@@ -308,46 +308,40 @@ resource "yandex_compute_instance" "vm2" {
     ssh-keys = "ubuntu:${file("~/.ssh/id_ed25519.pub")}"
   }
 
-  connection {
-    type        = "ssh"
-    user        = "ubuntu"
-    private_key = file("~/.ssh/id_ed25519")
-    host        = self.network_interface[0].nat_ip_address
-  }
+  # connection {
+  #   type        = "ssh"
+  #   user        = "ubuntu"
+  #   private_key = file("~/.ssh/id_ed25519")
+  #   host        = self.network_interface[0].nat_ip_address
+  # }
 
   depends_on = [yandex_mdb_postgresql_cluster.dbcluster]
 }
 
-# resource "local_file" "tf_ansible_vars_file" {
+resource "local_file" "tf_ansible_vars_file" {
  
-#   content = <<-DOC
-#   # Превед медвед
-#   db_database: ${yandex_mdb_postgresql_database.db.name}
-#   db_port: 6432
-#   db_host: ${yandex_mdb_postgresql_cluster.dbcluster.host.0.fqdn}
-#   db_user: ${yandex_mdb_postgresql_user.dbuser.name}
-#   db_password: ${yandex_mdb_postgresql_user.dbuser.password}
-#   ip_vm1: ${yandex_compute_instance.vm1.network_interface[0].nat_ip_address}
-#   ip_vm2: ${yandex_compute_instance.vm2.network_interface[0].nat_ip_address}  
-#   DOC
+  content = <<-DOC
+  db_database: ${yandex_mdb_postgresql_database.db.name}
+  db_port: 6432
+  db_host: ${yandex_mdb_postgresql_cluster.dbcluster.host.0.fqdn}
+  db_user: ${yandex_mdb_postgresql_user.dbuser.name}
+  db_password: ${yandex_mdb_postgresql_user.dbuser.password} 
+  DOC
 
-#   filename = "../ansible//group_vars/webservers/tf_ansible_vars_file.yml"
-# }
+  filename = "../ansible//group_vars/webservers/tf_ansible_vars_file.yml"
+}
 
 # ansible_user1 = ${yandex_compute_instance.vm1.connection}
 # ansible_user2 = ${yandex_compute_instance.vm2.connection}
 
 resource "local_file" "inventory" {
-        filename        = "../ansible/inventory1.yml"
+        filename        = "../ansible/inventory1.ini"
         content         = templatefile("../ansible/inventory1.tftpl",
                                 {
                                 ip_addrs = [
                                   yandex_compute_instance.vm1.network_interface[0].nat_ip_address,
                                   yandex_compute_instance.vm2.network_interface[0].nat_ip_address                      
-                                ],
-                                #ansible_user1 = yandex_compute_instance.vm1.connection.user,
-                                #ansible_user2 = yandex_compute_instance.vm2.connection.user
-                                
+                                ],                               
                                 
                                 })
 }

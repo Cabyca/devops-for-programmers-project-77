@@ -1,3 +1,0 @@
-[webservers]
-server0 ansible_host=84.201.135.110 ansible_user=ubuntu ansible_become=true
-server1 ansible_host=62.84.125.143 ansible_user=ubuntu ansible_become=true

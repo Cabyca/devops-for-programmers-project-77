@@ -1,13 +1,3 @@
-# db_user: cabyca
-# db_password: "{{ cabyca_vault_db_password }}"
-db_database: "hexlet"
-db_port: 6432
-# db_postgres: rc1d-uyjsmeh5ny19b371.mdb.yandexcloud.net
-db_host: rc1a-b4yg1xdqez5o94yj.mdb.yandexcloud.net
-db_user: "me"
-db_password: "bvcdV6sdBS7AXZs"
-
-
 external_application_port: 80
 
 datadog_app_key: "{{ datadog_app_key_vault }}"
