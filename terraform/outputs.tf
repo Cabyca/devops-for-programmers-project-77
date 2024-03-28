@@ -1,13 +1,13 @@
 output "db_username" {
   description = "Database administrator username"
   value       = yandex_mdb_postgresql_user.dbuser.name
-  #sensitive   = true
+  sensitive   = true
 }
 
 output "db_name" {
   description = "Database administrator username"
   value       = yandex_mdb_postgresql_database.db.name
-  #sensitive   = true
+  sensitive   = true
 }
 
 output "db_password" {
