@@ -1,4 +1,0 @@
-[webservers]
-%{ for i, addr in ip_addrs ~}
-server${i} ansible_host=${addr} ansible_user=ubuntu ansible_become=true
-%{ endfor ~}

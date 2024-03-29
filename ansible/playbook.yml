@@ -33,4 +33,4 @@
   roles:
    - name: datadog.datadog
      tags:
-        - deploy
+        - monitoring

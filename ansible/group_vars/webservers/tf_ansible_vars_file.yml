@@ -2,4 +2,3 @@ db_database: hexlet
 db_port: 6432
 db_host: rc1a-b4yg1xdqez5o94yj.mdb.yandexcloud.net
 db_user: me
-db_password: bvcdV6sdBS7AXZs 

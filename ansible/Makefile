@@ -8,5 +8,8 @@ python:
 	ansible-playbook playbook.yml -i inventory.ini -t python --vault-password-file vault-password
 
 wiki:
-	ansible-playbook playbook.yml -i inventory1.ini -t wiki --vault-password-file vault-password
+	ansible-playbook playbook.yml -i inventory.ini -t wiki --vault-password-file vault-password
+
+monitoring:
+	ansible-playbook playbook.yml -i inventory.ini -t monitoring --vault-password-file vault-password
 

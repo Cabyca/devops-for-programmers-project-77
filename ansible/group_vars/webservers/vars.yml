@@ -8,7 +8,7 @@ datadog_checks:
     init_config:
 
     instances:
-      - name: Redmine
+      - name: Wiki_js
         url: http://localhost
 
 pip_install_packages:

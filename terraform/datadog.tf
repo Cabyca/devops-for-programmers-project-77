@@ -1,3 +1,22 @@
+resource "datadog_monitor" "http_check" {
+  name               = "Name for monitor foo"
+  type               = "service check"
+  message            = "Monitor triggered"
+  escalation_message = "Escalation message"
+
+  query = <<EOQ
+  "http.can_connect".over("instance:wiki_js","url:http:localhost").by("*").last(3).count_by_status()
+  EOQ
+  
+  monitor_thresholds {
+    warning  = 1
+    critical = 2
+  }
+  #include_tags = true
+
+  #tags = ["foo:bar", "team:fooBar"]
+}
+
 # resource "datadog_synthetics_test" "http_check" {
 #   type = "api"
 
@@ -14,6 +33,7 @@
 #       target   = "200"
 #     }
 #   ]
+# }
 
 #   name    = "Terraform Synthetics Test Configuration"
 #   message = "This is a test message for the synthetics check"

@@ -1,0 +1,4 @@
+[webservers]
+%{ for i, addr in ip_addrs ~}
+hexlet${i+1} ansible_host=${addr} ansible_user=ubuntu ansible_become=true
+%{ endfor ~}
