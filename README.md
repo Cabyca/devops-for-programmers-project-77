@@ -12,9 +12,23 @@
 * make
 * python
 
-## Создание инфраструктуры в облаке - TERRAFORM
+### Создание инфраструктуры в облаке - TERRAFORM
 
-## Деплой приложения завернутого в Docker на созданную инфраструктуру- ANSIBLE
+```bash
+make terraform-init
+```
+
+```bash
+make terraform-apply
+```
+
+#### удаление инфраструктуры:
+
+```bash
+make terraform-destroy
+```
+
+### Деплой приложения завернутого в Docker на созданную инфраструктуру- ANSIBLE
 
 ```bash
 make prepare 

@@ -7,3 +7,4 @@ terraform/secret.auto.tfvars
 terraform/.terraform*
 terraform/.terraform
 terraform/.terraform.lock.hcl
+
