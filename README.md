@@ -1,5 +1,4 @@
 # Инфраструктура как код
-### (создание инфраструктуры в облаке, деплой приложения, настраивание мониторинга серверов)
 
 ### Hexlet tests and linter status:
 [![Actions Status](https://github.com/Cabyca/devops-for-programmers-project-77/actions/workflows/hexlet-check.yml/badge.svg)](https://github.com/Cabyca/devops-for-programmers-project-77/actions)
@@ -28,10 +27,16 @@ make terraform-apply
 make terraform-destroy
 ```
 
-### Деплой приложения на созданную инфраструктуру- ANSIBLE
+### Деплой приложения WIKI на созданную инфраструктуру - ANSIBLE
 
 ```bash
-make deploy 
+make deploy-wiki
+```
+
+### Мониторинг приложения
+
+```bash
+make monitoring-wiki
 ```
 
 ### Работа с зашифрованными данными (в данном случае пароль к БД приложения):
