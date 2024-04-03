@@ -1,5 +1,5 @@
 # Инфраструктура как код
-### (создание инфраструктуры в облаке, деплой прриложения, настраивание мониторинга серверов)
+### (создание инфраструктуры в облаке, деплой приложения, настраивание мониторинга серверов)
 
 ### Hexlet tests and linter status:
 [![Actions Status](https://github.com/Cabyca/devops-for-programmers-project-77/actions/workflows/hexlet-check.yml/badge.svg)](https://github.com/Cabyca/devops-for-programmers-project-77/actions)
@@ -28,9 +28,7 @@ make terraform-apply
 make terraform-destroy
 ```
 
-### Деплой приложения завернутого в Docker на созданную инфраструктуру- ANSIBLE
-
-* подготовка ролей Ansible
+### Деплой приложения на созданную инфраструктуру- ANSIBLE
 
 ```bash
 make deploy 
