@@ -30,27 +30,13 @@ make terraform-destroy
 
 ### Деплой приложения завернутого в Docker на созданную инфраструктуру- ANSIBLE
 
+* подготовка ролей Ansible
+
 ```bash
-make prepare 
+make deploy 
 ```
 
-## Варианты запуска playbook.yml
-
-### Установка python
-```bash
-make python
-```
-### Развертывание/обновление Redmine
-```bash
-make redmine
-```
-
-### Деплой приложения Redmine (требуется пароль к БД)
-```bash
-make deploy
-```
-
-## Работа с зашифрованными данными (в данном случае пароль к БД):
+## Работа с зашифрованными данными (в данном случае пароль к БД приложения):
 
 ### изменение зашифрованного файла
 
@@ -58,4 +44,4 @@ make deploy
 ansible-vault edit group_vars/webservers/vault.yml
 ```
 
-[Ссылка на задеплоенное приложение cabyca.ru](https://cabyca.ru)
+[Ссылка на приложение cabyca.ru](https://cabyca.ru)
