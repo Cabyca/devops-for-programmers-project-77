@@ -1,5 +1,3 @@
-# Объявление переменных для конфиденциальных параметров
-
 variable "datadog_api_key" {
   description = "Datadog token"
   type        = string
@@ -48,9 +46,20 @@ variable "yc_postgresql_version" {
   sensitive   = true
 }
 
-# локальные переменные
+variable "domen" {
+  description = "Domen name"
+  type        = string
+  sensitive   = true
+}
 
-locals {
-  network_name = "network"
-  subnet_name = "subnet"
+variable "network_name" {
+  description = "Network name"
+  type        = string
+  sensitive   = true
+}
+
+variable "subnet_name" {
+  description = "Subnet name"
+  type        = string
+  sensitive   = true
 }

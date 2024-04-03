@@ -14,22 +14,6 @@ resource "yandex_alb_load_balancer" "test-balancer" {
     }
   }
 
-  # listener {
-  #   name = "my-listener"
-  #   endpoint {
-  #     address {
-  #       external_ipv4_address {
-  #       }
-  #     }
-  #     ports = [ 80 ]
-  #   }    
-  #   http {
-  #     handler {
-  #       http_router_id = yandex_alb_http_router.tf-router.id
-  #     }
-  #   }
-  # }
-
   listener {
     name = "listener"
     endpoint {
