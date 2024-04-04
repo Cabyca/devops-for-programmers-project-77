@@ -1,8 +1,8 @@
-terraform-init:
+init-terraform:
 	terraform init
 
-terraform-apply:
+apply-terraform:
 	terraform apply
 
-terraform-destroy:
+destroy-terraform:
 	terraform destroy

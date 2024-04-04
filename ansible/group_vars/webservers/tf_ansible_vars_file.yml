@@ -1,4 +1,4 @@
-db_database: hexlet
+db_database: tfhexlet
 db_port: 6432
-db_host: rc1a-b4yg1xdqez5o94yj.mdb.yandexcloud.net
+db_host: rc1a-lw89pntmmqcip67f.mdb.yandexcloud.net
 db_user: me

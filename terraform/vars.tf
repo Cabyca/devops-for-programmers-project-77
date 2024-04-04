@@ -37,29 +37,24 @@ variable "db_password" {
 variable "db_database" {
   description = "DB database"
   type        = string
-  sensitive   = true
 }
 
 variable "yc_postgresql_version" {
   description = "DB yc postgresql version"
   type        = string
-  sensitive   = true
 }
 
 variable "domen" {
   description = "Domen name"
   type        = string
-  sensitive   = true
 }
 
 variable "network_name" {
   description = "Network name"
   type        = string
-  sensitive   = true
 }
 
 variable "subnet_name" {
   description = "Subnet name"
   type        = string
-  sensitive   = true
 }

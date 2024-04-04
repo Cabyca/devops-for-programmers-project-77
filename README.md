@@ -14,17 +14,17 @@
 ### Создание инфраструктуры в облаке - TERRAFORM
 
 ```bash
-make terraform-init
+make init-terraform
 ```
 
 ```bash
-make terraform-apply
+make apply-terraform
 ```
 
 #### удаление инфраструктуры:
 
 ```bash
-make terraform-destroy
+make destroy-terraform
 ```
 
 ### Деплой приложения WIKI на созданную инфраструктуру - ANSIBLE
