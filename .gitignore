@@ -1,5 +1,7 @@
 .env
 ansible/vault-password
+ansible/group_vars/webservers/tf_ansible_vars_file.yml
+
 terraform/secret.auto.tfvars
 terraform/terraform.tfstate
 terraform/terraform.tfstate.backup
