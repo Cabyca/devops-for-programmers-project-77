@@ -75,6 +75,7 @@ ansible-vault edit group_vars/webservers/vault.yml
 ##### domen                 = "..."
 ##### network_name          = "..."
 ##### subnet_name           = "..."
+##### path_to_file          = "~/.ssh/*.pub"
 
 
 [Ссылка на приложение cabyca.ru](https://cabyca.ru)

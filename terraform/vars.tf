@@ -58,3 +58,9 @@ variable "subnet_name" {
   description = "Subnet name"
   type        = string
 }
+
+variable "path_to_file" {
+  description = "Path to ssh file"
+  type        = string
+  sensitive   = true
+}
