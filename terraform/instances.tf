@@ -23,7 +23,7 @@ resource "yandex_compute_instance" "vm1" {
   metadata = {
     ssh-keys = "ubuntu:${file(var.path_to_file)}"
   }
-  
+
   depends_on = [yandex_mdb_postgresql_cluster.dbcluster]
 }
 

@@ -6,8 +6,8 @@ resource "yandex_dns_zone" "zone1" {
     label1 = "label-1-value"
   }
 
-  zone             = var.domen
-  public           = true
+  zone   = var.domen
+  public = true
 }
 
 resource "yandex_dns_recordset" "rs1" {

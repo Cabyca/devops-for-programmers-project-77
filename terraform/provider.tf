@@ -5,16 +5,16 @@ terraform {
       version = "~> 0.84.0"
     }
     datadog = {
-      source = "DataDog/datadog"
+      source  = "DataDog/datadog"
       version = "3.10.0"
     }
   }
 }
 
 provider "yandex" {
-  zone  = "ru-central1-a"
+  zone      = "ru-central1-a"
   folder_id = var.yc_folder_id
-  token = var.yc_token
+  token     = var.yc_token
 }
 
 provider "datadog" {

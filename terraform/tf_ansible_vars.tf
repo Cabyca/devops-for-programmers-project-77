@@ -1,16 +1,16 @@
 resource "local_file" "inventory" {
-        filename        = "../ansible/inventory.ini"
-        content         = templatefile("templates/inventory.tftpl",
-                                {
-                                ip_addrs = [
-                                  yandex_compute_instance.vm1.network_interface[0].nat_ip_address,
-                                  yandex_compute_instance.vm2.network_interface[0].nat_ip_address
-                                ],
-                                })
+  filename = "../ansible/inventory.ini"
+  content = templatefile("templates/inventory.tftpl",
+    {
+      ip_addrs = [
+        yandex_compute_instance.vm1.network_interface[0].nat_ip_address,
+        yandex_compute_instance.vm2.network_interface[0].nat_ip_address
+      ],
+  })
 }
 
 resource "local_file" "tf_ansible_vars_file" {
- 
+
   content = <<-DOC
   db_database: ${yandex_mdb_postgresql_database.db.name}
   db_port: 6432
