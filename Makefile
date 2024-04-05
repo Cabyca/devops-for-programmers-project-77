@@ -1,5 +1,6 @@
 deploy-app:
 	make -C terraform init-terraform
+	make -C terraform format-terraform
 	make -C terraform apply-terraform
 	make -C ansible prepare
 	make -C ansible python

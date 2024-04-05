@@ -6,3 +6,6 @@ apply-terraform:
 
 destroy-terraform:
 	terraform destroy
+
+format-terraform:
+	terraform fmt

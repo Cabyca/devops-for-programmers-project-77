@@ -16,7 +16,8 @@
 ```bash
 make deploy-app
 ```
-#### или
+
+## или
 
 ### Создание инфраструктуры в облаке - TERRAFORM
 
@@ -28,6 +29,11 @@ make init-terraform
 make apply-terraform
 ```
 
+#### форматирование файлов конфигурации:
+
+```bash
+make format-terraform
+```
 #### удаление инфраструктуры:
 
 ```bash
@@ -47,16 +53,16 @@ make monitoring-wiki
 ```
 ### Для работы приложения потребуется:
 
-* зарегистрируйтесь на сайте (https://www.datadoghq.com/)
-#####        получите два ключа: datadog_api, datadog_app
+* зарегистрироваться на сайте (https://www.datadoghq.com/)
+>       получить два ключа: datadog_api, datadog_app
 
-* в папке ansible создайте файл vault-password :
-#####        запишите в файл пароль к доступу vault.yml
+* в папке ansible создать файл vault-password :
+>        записать в файл пароль к доступу файла vault.yml
 
-* в папке ansible/group_vars/webservers создайте файл vault.yml :
-#####        зашифруйте в нем:
-#####        datadog_api_key_vault: "..."
-#####        datadog_app_key_vault: "..."
+* в папке ansible/group_vars/webservers создать файл vault.yml :
+>        зашифровать в нем:
+>        datadog_api_key_vault: "..."
+>        datadog_app_key_vault: "..."
 
 * редактирование зашифрованного файла vault.yml :
 ```bash
@@ -64,18 +70,19 @@ ansible-vault edit group_vars/webservers/vault.yml
 ```
 
 * в папке terraform создайте файл secret.auto.tfvars :
-#####        yc_token              = "..."
-#####        yc_postgresql_version = "..."
-#####        db_database           = "..."
-#####        db_user               = "..."
-#####        db_password           = "..."
-#####        yc_folder_id          = "..."
-#####        datadog_api_key       = "..."
-#####        datadog_app_key       = "..."
-#####        domen                 = "..."
-#####        network_name          = "..."
-#####        subnet_name           = "..."
-#####        path_to_file          = "~/.ssh/*.pub"
+>        yc_token              = "..."
+>        yc_postgresql_version = "..."
+>        db_database           = "..."
+>        db_user               = "..."
+>        db_password           = "..."
+>        yc_folder_id          = "..."
+>        datadog_api_key       = "..."
+>        datadog_app_key       = "..."
+>        domen                 = "..."
+>        network_name          = "..."
+>        subnet_name           = "..."
+>        path_to_file          = "~/.ssh/*.pub"
+
 
 
 [Ссылка на приложение cabyca.ru](https://cabyca.ru)
